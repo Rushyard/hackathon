@@ -41,7 +41,12 @@ export function CreateCounter({
             },
           });
 
-          onCreated(effects?.created?.[0]?.reference?.objectId!);
+          const createdObjectId = effects?.created?.[0]?.reference?.objectId;
+          if (createdObjectId) {
+            onCreated(createdObjectId);
+          } else {
+            console.error('Failed to get created object ID');
+          }
         },
       },
     );

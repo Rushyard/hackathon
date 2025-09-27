@@ -1,5 +1,5 @@
 'use client'
-import { SuiClient, getFullnodeUrl } from '@mysten/sui/client';
+import { SuiClient, getFullnodeUrl, SuiObjectData } from '@mysten/sui/client';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
@@ -10,7 +10,7 @@ interface CounterData {
   owner: string;
 }
 
-function getCounterFields(data: any): { value: number; owner: string } | null {
+function getCounterFields(data: SuiObjectData): { value: number; owner: string } | null {
   if (data?.content?.dataType !== "moveObject") {
     return null;
   }

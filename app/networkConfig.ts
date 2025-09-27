@@ -11,7 +11,7 @@ const { networkConfig, useNetworkVariable, useNetworkVariables } =
     devnet: {
       url: getFullnodeUrl("devnet"),
       variables: {
-        counterPackageId: DEVNET_COUNTER_PACKAGE_ID,
+        counterPackageId: DEVNET_COUNTER_PACKAGE_ID || TESTNET_COUNTER_PACKAGE_ID, // Fallback to testnet
       },
     },
     testnet: {
@@ -23,7 +23,7 @@ const { networkConfig, useNetworkVariable, useNetworkVariables } =
     mainnet: {
       url: getFullnodeUrl("mainnet"),
       variables: {
-        counterPackageId: MAINNET_COUNTER_PACKAGE_ID,
+        counterPackageId: MAINNET_COUNTER_PACKAGE_ID || TESTNET_COUNTER_PACKAGE_ID, // Fallback to testnet
       },
     },
   });
