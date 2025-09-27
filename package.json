@@ -8,6 +8,7 @@
     "pnpm": ">=8.0.0"
   },
   "scripts": {
+    "prestart": "next build",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",

@@ -28,4 +28,4 @@ const { networkConfig, useNetworkVariable, useNetworkVariables } =
     },
   });
 
-export { useNetworkVariable, useNetworkVariables, networkConfig };
+export { networkConfig, useNetworkVariable, useNetworkVariables };
